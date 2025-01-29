@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1473042904451-00171c69419d?q=80&w=2099&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: left;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin-bottom: 50px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        .form-control:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content-wrapper">
+        <!-- Quote Section -->
+        <div class="quote">
+            "Unlocking the road to data-driven safety, one license plate at a time."
+        </div>
+
+        <!-- Form Container -->
+        <div class="container">
+            <h1>License Plate Detector</h1>
+            <form method="POST" action="/upload" enctype="multipart/form-data">
+                <input
+                    type="file"
+                    name="file"
+                    id="fileInput"
+                    class="form-control"
+                    accept="image/*,video/*"
+                    required
+                >
+                <button type="submit">Upload and Process</button>
+            </form>
+            <p class="mt-4 text-sm text-gray-500">
+                Ensure the uploaded file contains a clear license plate image/video.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
